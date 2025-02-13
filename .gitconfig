@@ -1,11 +1,11 @@
 [includeIf "gitdir/i:~/Developer/personal/"]
-    path = $HOME/.gitconfig-personal
+    path = $HOME/.config/git/.gitconfig-personal
 
 [includeIf "gitdir/i:~/Developer/work/"]
-    path = $HOME/.gitconfig-work
+    path = $HOME/.config/git/.gitconfig-work
 
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = $HOME/.config/git/.gitignore
 [user]
 	name = sunaboi
 	email = sunaboi@sunaboi.xyz
