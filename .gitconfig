@@ -1,8 +1,8 @@
 [includeIf "gitdir/i:~/Developer/personal/"]
-    path = ~/Developer/personal/.gitconfig
+    path = $HOME/.gitconfig-personal
 
 [includeIf "gitdir/i:~/Developer/work/"]
-    path = ~/Developer/work/.gitconfig
+    path = $HOME/.gitconfig-work
 
 [core]
     excludesfile = ~/.gitignore

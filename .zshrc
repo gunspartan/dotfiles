@@ -1,6 +1,10 @@
 # Load Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH="$PATH:/Applications/Alacritty.app/Contents/MacOS/alacritty:/usr/local/bin"
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+   export PATH="$PATH:/Applications/Alacritty.app/Contents/MacOS/alacritty:/usr/local/bin"
+fi
+
+export PATH=$PATH:$HOME/.local/bin
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
