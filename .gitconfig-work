@@ -1,0 +1,9 @@
+[user]
+    email = gunhwang99@gmail.com
+    name = Gunn Hwang 
+
+[github]
+    user = gunspartan
+
+[core]
+    sshCommand = "ssh -i ~/.ssh/<personal_key>"

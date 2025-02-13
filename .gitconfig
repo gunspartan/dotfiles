@@ -1,0 +1,11 @@
+[includeIf "gitdir/i:~/Developer/personal/"]
+    path = ~/Developer/personal/.gitconfig
+
+[includeIf "gitdir/i:~/Developer/work/"]
+    path = ~/Developer/work/.gitconfig
+
+[core]
+    excludesfile = ~/.gitignore
+[user]
+	name = sunaboi
+	email = sunaboi@sunaboi.xyz
