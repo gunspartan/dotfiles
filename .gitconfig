@@ -1,11 +1,21 @@
-[includeIf "gitdir/i:~/Developer/personal/"]
+[includeIf "gitdir/i:$HOME/Developer/personal/"]
     path = $HOME/.config/git/.gitconfig-personal
 
-[includeIf "gitdir/i:~/Developer/work/"]
+[includeIf "gitdir/i:$HOME/Developer/work/"]
     path = $HOME/.config/git/.gitconfig-work
+
+[includeIf "gitdir:/Users"]
+    path = $HOME/.config/git/.gitconfig-macos
+[includeIf "gitdir:C:"]
+    path = $HOME/.config/git/.gitconfig-windows
+[includeIf "gitdir:/home"]
+    path = $HOME/.config/git/.gitconfig-linux
 
 [core]
     excludesfile = $HOME/.config/git/.gitignore
 [user]
 	name = sunaboi
 	email = sunaboi@sunaboi.xyz
+
+[credential "https://dev.azure.com"]
+	useHttpPath = true
