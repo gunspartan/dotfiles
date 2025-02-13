@@ -68,6 +68,7 @@ zstyle ':fzf-tab:complate:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
+alias tree='tree -I ".git" -a'
 
 # Shell integrations
 eval "$(fzf --zsh)"
