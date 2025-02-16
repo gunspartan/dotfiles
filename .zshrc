@@ -71,6 +71,7 @@ alias c='clear'
 alias tree='tree -I ".git" -a'
 
 # Shell integrations
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
