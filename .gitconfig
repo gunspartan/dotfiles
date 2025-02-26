@@ -16,3 +16,8 @@
 [core]
     excludesfile = ~/.config/git/.gitignore
 
+[user]
+	email = sunaboi@sunaboi.xyz
+	name = sunaboi
+[init]
+	defaultBranch = master
