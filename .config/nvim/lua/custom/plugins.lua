@@ -11,6 +11,13 @@ local plugins = {
     end,
   },
   {
+    "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require "custom.configs.null-ls"
+    end,
+  },
+  {
     "williamboman/mason.nvim",
     dependencies = {
         "williamboman/mason-lspconfig.nvim"
@@ -37,6 +44,7 @@ local plugins = {
                     "emmet_ls",
                     "prismals",
                     "pyright",
+                    "prettierd",
                 },
             -- auto-install configured servers (with lspconfig)
             automatic_installation = true, -- not the same as ensure_installed
@@ -46,8 +54,37 @@ local plugins = {
     opts = {
       ensure_installed = {
         "rust-analyzer",
+        "emmet_ls",
       },
     },
-  }
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+    },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      opts = require "plugins.configs.treesitter"
+      opts.ensure_installed = {
+        "lua",
+        "javascript",
+        "typescript",
+        "tsx",
+        "go",
+        "rust",
+        "css",
+      }
+      return opts
+    end
+  },
 }
 return plugins

@@ -3,6 +3,15 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
+local servers = {"ts_ls", "tailwindcss", "eslint", "html", "cssls", "pyright", "svelte", "graphql", "prismals"}
+
+for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
+end
+
 lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
   capabilities = capabilities,
@@ -10,30 +19,10 @@ lspconfig.rust_analyzer.setup({
   root_dir = lspconfig.util.root_pattern("Cargo.toml"),
 })
 
-lspconfig.html.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-lspconfig.ts_ls.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-lspconfig.cssls.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
 lspconfig.emmet_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "javascript", "typescript" },
-})
-
-lspconfig.pyright.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
 })
 
 -- configure lua server (with special settigns)
